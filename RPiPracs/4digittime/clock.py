@@ -3,6 +3,8 @@ import time
 import datetime
 import RPi.GPIO as GPIO
 import tm1637
+#VCC -> GPIO (Pin 4)
+#GND -> GPIO (Pin 14)
 #CLK -> GPIO23 (Pin 16)
 #Di0 -> GPIO24 (Pin 18)
 Display = tm1637.TM1637(23,24,tm1637.BRIGHT_TYPICAL)
