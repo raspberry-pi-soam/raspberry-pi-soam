@@ -1,0 +1,26 @@
+vcc - pin 2
+gnd - pin 6
+txd - pin 10
+rxd - no required
+
+Open terminal:
+sudo apt-get update
+sudo apt-get upgrade
+sudo nano/boot/config.txt
+
+Add these lines:
+dtparam=spi=on
+dtoverlay=pi3-disable-bt
+core freq=250
+enable_uart=1
+force_turbo-1
+Ctrl+O Enter Ctrl+K to Save and Exit
+
+Back to Terminal:
+sudo reboot
+sudo systemctl stop serial-getty@ttyS0.service
+sudo systemctl disable serial-getty@ttyS0.service
+sudo reboot
+sudo systemctl enable serial-getty@ttyAMA0.service
+sudo apt-get install minicom
+sudo cat /dev/ttyAMA0
