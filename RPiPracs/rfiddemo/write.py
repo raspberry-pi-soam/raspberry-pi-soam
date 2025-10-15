@@ -1,6 +1,12 @@
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
+# SDA - 24
+# SCK - 23
+# MOSI - 19
+# MISO - 21 
+# GND - 6 , VCC / 3.3V - 1
+# RST - 22
 #welcome message
 print("Looking for cards")
 print("Press Ctrl+c to STOP")
