@@ -21,3 +21,8 @@ while(True):
 #Di0 -> GPIO24 (Pin 18)
 #sudo apt update
 #sudo apt upgrade
+#steps to write in exam
+#1.Connection of wires
+#2.dowload tm1637.py script from https://github.com/mcauser/micropython-tm1637.git
+#3.clock.py
+#4.place tm1637.py and clock.py in same folder
