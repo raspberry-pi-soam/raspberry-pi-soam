@@ -57,8 +57,8 @@ while True:
 # GND - 9
 # SDA - 3
 # SCL - 5
-# sudo raspo-config > I2C
-# apt & apt-get update & upgrade
+# sudo raspi-config > Interface option > I2C
+# apt & apt-get update & upgrade(sudo apt-get update , sudo apt-get upgrade)
 # cd ~
 # sudo apt-get install build-essential python3-dev python3-smbus git python3-pip
 # cd karke python3 setup.py install
