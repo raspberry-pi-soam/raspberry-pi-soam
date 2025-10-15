@@ -7,6 +7,12 @@ reader = SimpleMFRC522()
 # MISO - 21 
 # GND - 6 , VCC / 3.3V - 1
 # RST - 22
+# sudo raspi-config > SPI
+# apt-get update & upgrade
+# sudo apt-get install python3-dev python3-pip
+# sudo pip3 install spidev
+# sudo pip3 install mfrc522
+# run write.py then read.py
 #welcome message
 print("Looking for cards")
 print("Press Ctrl+c to STOP")
