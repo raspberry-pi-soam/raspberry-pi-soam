@@ -2,6 +2,10 @@
 # the screen.
 # Author: Tony DiCola
 # License: Public Domain
+# VDD - 19
+# GND - 9
+# SDA - 3
+# SCL - 5
 import time
 
 # Import the ADS1x15 module.
