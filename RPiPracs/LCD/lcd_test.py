@@ -8,7 +8,7 @@ from time import sleep
 # sudo reboot and update, upgrade apt
 # sudo apt install i2c-tools python3-smbus python3-pip
 # sudo pip3 install RPLCD
-# i2cdetect -y 1
+# i2cdetect -y 1 & check for 27 or any other number
 
 lcd = CharLCD('PCF8574', 0x27)  # Change 0x27 if needed
 
