@@ -13,7 +13,7 @@
 # cd karke python3 setup.py install
 # sudo apt-get install python#-matplotlib
 # sudo pip3 install drawnow
-# cd examples karke python3 simpletest.py
+# cd examples karke python3 simpletest.py then scope.py
 import time
 
 # Import the ADS1x15 module.
