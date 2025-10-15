@@ -6,6 +6,14 @@
 # GND - 9
 # SDA - 3
 # SCL - 5
+# sudo raspo-config > I2C
+# apt & apt-get update & upgrade
+# cd ~
+# sudo apt-get install build-essential python3-dev python3-smbus git python3-pip
+# cd karke python3 setup.py install
+# sudo apt-get install python#-matplotlib
+# sudo pip3 install drawnow
+# cd examples karke python3 simpletest.py
 import time
 
 # Import the ADS1x15 module.
