@@ -6,7 +6,7 @@ rxd - no required
 Open terminal:
 sudo apt-get update
 sudo apt-get upgrade
-sudo nano/boot/config.txt
+sudo nano /boot/config.txt
 
 Add these lines:
 dtparam=spi=on
@@ -24,3 +24,4 @@ sudo reboot
 sudo systemctl enable serial-getty@ttyAMA0.service
 sudo apt-get install minicom
 sudo cat /dev/ttyAMA0
+
