@@ -1,0 +1,219 @@
+﻿4 led blinking
+
+
+import RPi.GPIO as GPIO
+import time
+
+
+GPIO.setmode (GPIO.BOARD)
+GPIO.setup(11,GPIO.OUT)
+GPIO.setup(13,GPIO.OUT)
+GPIO.setup(15,GPIO.OUT)
+GPIO.setup(16,GPIO.OUT)
+
+
+for i in range(5):
+GPIO.output(11, True)
+print("ON")
+time.sleep(1)
+GPIO.output(11, False)
+print("OFF")
+time.sleep(1)
+GPIO.output(13, True)
+print("ON")
+time.sleep(1)
+GPIO.output(13, False)
+print("OFF")
+time.sleep(1)
+GPIO.output(15, True)
+print("ON")
+time.sleep(1)
+GPIO.output(15, False)
+print("OFF")
+time.sleep(1)
+GPIO.output(16, True)
+print("ON")
+time.sleep(1)
+GPIO.output(16, False)
+print("OFF")
+time.sleep(1)
+print("Done")
+GPIO.cleanup()
+
+
+
+
+7 segment
+
+
+import sys
+import time
+import datetime
+import RPi.GPIO as GPIO
+import tm1637
+
+
+Display tm1637.TM1637(23,24,tm1637.BRIGHT_TYPICAL)
+Display.clear()
+Display.brightness(1)
+
+
+while(True):
+now = datetime.datetime.now()
+hour = now.hour
+minute now.minute
+second = now.second
+currenttime = 1234
+currenttime = f"{hour: 02d}{minute:02d}" # currenttime = "1305"
+Display.show(currenttime, colon (second % 2 == 1))
+time.sleep(1)
+
+
+#VCC -> GPIO (Pin 4)
+#GND -> GPIO (Pin 14)
+#CLK -> GPI023 (Pin 16)
+#D10 -> GPIO24 (Pin 18)
+#sudo apt update
+#sudo apt upgrade
+#steps to write in exam
+#1.Connection of wires
+#2.dowload tm1637.py script from https://github.com/mcauser/micropython-tm1637.git
+#3.clock.py
+#4.place tm1637.py and clock.py in same folder
+#5.fir commands likh do apne update and upgrade and python3 clock.py
+
+
+Oscilloscope 
+
+
+# VDD 17
+# GND 9
+# SDA 3
+# SCL 5
+# sudo raspi-config > Interface option > I2C
+# apt & apt-get update & upgrade (sudo apt-get update sudo apt-get upgrade)
+# cd
+# sudo apt-get install build-essential python3-dev python3-smbus git python3-pip
+# sudo apt-get install python3-matplotlib
+# sudo pip3 install drawnow
+# cd examples karke python3 simpletest.py then python3 scope.py
+#what to write in exam
+# steps shuru se build essential tk likh lo fir git clone https://github.com/adafruit/Adafruit_Python_ADS1x15.git
+# cd Adafruit_Python_ADS1x1z and sudo python3 setup.py install and cd examples then run simpletest.py
+
+
+
+
+
+
+GPS
+
+
+VCC pin 2
+gnd pin 6
+txd pin 10
+rxd no required
+
+
+Open terminal:
+sudo apt-get update
+sudo apt-get upgrade
+sudo nano /boot/config.txt
+Add these lines:
+dtparam=spi=on
+dtoverlay=pi3-disable-bt
+core freq=250
+enable_uart=1
+force_turbo-1
+
+
+Ctrl+0 Enter Ctrl+K to Save and Exit
+
+
+Back to Terminal:
+sudo reboot
+sudo systemctl stop serial-getty@ttyS0.service
+sudo systemctl disable serial-getty@ttyS0.service
+sudo reboot
+sudo systemctl enable serial-getty@ttyAMA0.service
+sudo apt-get install minicom
+sudo cat /dev/ttyAMAO
+
+
+RFID
+
+
+# SDA 24
+# SCK 23
+# MOSI 19
+# MISO 21
+# GND 6, VCC 3.3/V 1
+# RST 22
+
+
+# apt-get update & upgrade
+# sudo raspi-config > SPI
+# sudo reboot
+# sudo apt-get install python3-dev python3-pip
+# sudo pip3 install spidev
+# sudo pip3 install mfrc522
+# run write.py then read.py
+#welcome message
+
+
+
+
+Write.py
+import RPi.GPIO as GPIO
+from mfrc522 import SimpleMFRC522
+
+
+reader = SimpleMFRC522()
+print("Looking for cards")
+print("Press Ctrl+c to STOP")
+try:
+text=input('Enter New Data:')
+print("Now place your tag to write ")
+reader.write(text)
+print("Data Written Successfully ")
+finally:
+GPIO.cleanup()
+
+
+Read.py
+import RPi.GPIO as GPIO
+from mfrc522 import SimpleMFRC522
+
+
+reader = SimpleMFRC522()
+#welcome message
+print ("Looking for cards")
+print ("Press Ctrl+c to STOP")
+try:
+id, text = reader.read()
+print(id)
+print(text)
+finally:
+GPIO.cleanup()
+
+
+
+
+LCD
+from RPLCD.i2c import CharLCD
+from time import sleep
+
+
+# gnd -6
+# vcc -4
+# sda -3
+# scl -5
+# sudo raspi-config > I2C
+# sudo reboot and update, upgrade apt
+# sudo apt install i2c-tools python3-smbus python3-pip
+# sudo pip3 install RPLCD
+# i2cdetect -y 1 & check for 27 or any other number
+lcd = CharLCD('PCF8574', 0x27) # Change 0x27 if needed
+lcd.write_string("hello from Team Rocket")
+sleep(10)
+lcd.clear()
