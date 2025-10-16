@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-[https://docs.google.com/document/d/1JqOx5qOXcm3f_XTe4OJ1QfnAbGUyts1gjblzrFRQFLI/edit?usp=drivesdk](Click Here)
+(Click Here)[https://docs.google.com/document/d/1JqOx5qOXcm3f_XTe4OJ1QfnAbGUyts1gjblzrFRQFLI/edit?usp=drivesdk]
 
 <!--
 **raspberry-pi-soam/raspberry-pi-soam** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
