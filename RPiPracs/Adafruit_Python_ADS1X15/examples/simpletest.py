@@ -66,4 +66,4 @@ while True:
 # cd examples karke python3 simpletest.py then python3 scope.py
 # what to write in exam
 # steps - shuru se build essential tk likh lo fir git clone https://github.com/adafruit/Adafruit_Python_ADS1x15.git
-# cd Adafruit_Python_ADS1x1z and sudo python3 setup.py install and cd examples then run simplest.py
+# cd Adafruit_Python_ADS1x1z and sudo python3 setup.py install and cd examples then run simpletest.py
