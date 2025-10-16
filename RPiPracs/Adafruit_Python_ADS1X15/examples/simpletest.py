@@ -61,7 +61,9 @@ while True:
 # apt & apt-get update & upgrade(sudo apt-get update , sudo apt-get upgrade)
 # cd ~
 # sudo apt-get install build-essential python3-dev python3-smbus git python3-pip
-# cd karke python3 setup.py install
-# sudo apt-get install python#-matplotlib
+# sudo apt-get install python3-matplotlib
 # sudo pip3 install drawnow
-# cd examples karke python3 simpletest.py then scope.py
+# cd examples karke python3 simpletest.py then python3 scope.py
+# what to write in exam
+# steps - shuru se build essential tk likh lo fir git clone https://github.com/adafruit/Adafruit_Python_ADS1x15.git
+# cd Adafruit_Python_ADS1x1z and sudo python3 setup.py install and cd examples then run simplest.py
